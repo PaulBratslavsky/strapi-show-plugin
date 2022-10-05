@@ -7,6 +7,7 @@
 import React, { useState, useEffect } from 'react';
 import strapiShowRequests from "../../api/strapi-show"
 import { LoadingIndicatorPage } from "@strapi/helper-plugin";
+import DataAccordion from '../../components/DataAccordion';
 import DataTable from '../../components/DataTable';
 
 const HomePage = () => {
@@ -30,16 +31,31 @@ const HomePage = () => {
     setIsLoading(false);
     setData(data.reduce((acc, cur) => ({ ...acc, ...cur }), {}))
 
-  },[])
+  }, [])
 
   if (isLoading) return <LoadingIndicatorPage />;
   return (
     <div>
-      <DataTable data={data['middlewares']} name="Middlewares"/>
-      <DataTable data={data['policies']} name="Polocies" />
-      <DataTable data={data['content-types']} name="Content Types" />
-      <DataTable data={data['services']} name="Services" />
-      <DataTable data={data['controllers']} name="Controllers" />
+      <DataAccordion
+        name="Middlewares"
+        data={data['middlewares']}
+      />
+      <DataAccordion
+        name="Policies"
+        data={data['policies']}
+      />
+      <DataAccordion
+        name="Content Types"
+        data={data['content-types']}
+      />
+      <DataAccordion
+        name="Services"
+        data={data['services']}
+      />
+      <DataAccordion
+        name="Controllers"
+        data={data['controllers']}
+      />
     </div>
   );
 };

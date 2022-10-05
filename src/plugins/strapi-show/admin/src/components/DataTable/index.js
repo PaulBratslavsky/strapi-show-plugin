@@ -10,13 +10,13 @@ import {
 import { Box } from "@strapi/design-system/Box";
 import { Typography } from "@strapi/design-system/Typography";
 
-export default function DataTable({ data, name }) {
+export default function DataTable({ data, name, padding = 0 }) {
   return (
     <Box
       background="neutral0"
       hasRadius={true}
       shadow="filterShadow"
-      padding={8}
+      padding={padding}
       style={{ marginTop: "10px" }}
     >
       <Table
