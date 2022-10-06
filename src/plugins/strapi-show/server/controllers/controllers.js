@@ -11,5 +11,15 @@ module.exports = ({ strapi }) => ({
       ctx.throw(500, err);
     }
   },
+  async getContentType(ctx) {
+    try {
+      ctx.body = await strapi
+        .plugin("strapi-show")
+        .service("services")
+        .getContentType(ctx.params.key);
+    } catch (err) {
+      ctx.throw(500, err);
+    }
+  },
 });
 

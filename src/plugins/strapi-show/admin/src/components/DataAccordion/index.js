@@ -3,7 +3,7 @@ import { Accordion, AccordionToggle, AccordionContent, AccordionGroup } from '@s
 import { Box } from '@strapi/design-system/Box';
 import DataTable from '../DataTable';
 
-export default function DataAccordion({ name, data, key }) {
+export default function DataAccordion({ name, data, onClick }) {
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -11,7 +11,7 @@ export default function DataAccordion({ name, data, key }) {
       <Accordion expanded={expanded} onToggle={() => setExpanded(s => !s)} id="acc-1" size="S">
         <AccordionToggle title={name} />
         <AccordionContent>
-          <DataTable data={data} name="Middlewares" />
+          <DataTable data={data} name={name} onClick={onClick} />
         </AccordionContent>
       </Accordion>
     </Box>

@@ -7,4 +7,12 @@ module.exports = [
       policies: [],
     },
   },
+  {
+    method: 'GET',
+    path: '/get-content-type/:key',
+    handler: 'controllers.getContentType',
+    config: {
+      policies: [],
+    }
+  }
 ];

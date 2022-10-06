@@ -6,6 +6,11 @@ const strapiShowRequests = {
       method: "GET",
     });
   },
+  getContentType: async (key) => {
+    return await request(`/strapi-show/get-content-type/:key${key}`, {
+      method: "GET",
+    });
+  },
 };
 
 export default strapiShowRequests;
