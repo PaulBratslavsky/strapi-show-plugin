@@ -11,6 +11,11 @@ const strapiShowRequests = {
       method: "GET",
     });
   },
+  getControllerCode: async (key) => {
+    return await request(`/strapi-show/get-controller-code/:key${key}`, {
+      method: "GET",
+    });
+  },
 };
 
 export default strapiShowRequests;

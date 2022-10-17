@@ -12,6 +12,7 @@ import { LoadingIndicatorPage } from "@strapi/helper-plugin";
 import DataAccordion from '../../components/DataAccordion';
 import DataModal from '../../components/DataModal';
 import { GetContentType } from '../../components/GetContentType';
+import { GetControllerCode } from '../../components/GetControllerCode';
 
 const HomePage = () => {
   const [loading, setLoading] = useState(true);
@@ -33,6 +34,8 @@ const HomePage = () => {
     switch (toCammelCase(data.type)) {
       case 'contentTypes':
         return <GetContentType data={data} />
+      case 'controllers': 
+        return <GetControllerCode data={data} />
       default:
         return null;
     }

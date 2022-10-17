@@ -14,5 +14,13 @@ module.exports = [
     config: {
       policies: [],
     }
+  },
+  {
+    method: 'GET',
+    path: '/get-controller-code/:key',
+    handler: 'controllers.getControllerCode',
+    config: {
+      policies: [],
+    }
   }
 ];

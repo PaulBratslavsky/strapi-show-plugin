@@ -21,5 +21,16 @@ module.exports = ({ strapi }) => ({
       ctx.throw(500, err);
     }
   },
+  async getControllerCode(ctx) {
+    console.log("########## FROM GET CONTROLLER #############")
+    try {
+      ctx.body = await strapi
+        .plugin("strapi-show")
+        .service("services")
+        .getControllerCode(ctx.params.key);
+    } catch (err) {
+      ctx.throw(500, err);
+    }
+  }
 });
 
