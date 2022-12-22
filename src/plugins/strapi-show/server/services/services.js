@@ -2,9 +2,6 @@
 const path = require('path');
 const fs = require('fs-extra');
 
-var appRoot = require('app-root-path');
-
-
 function getRoutes() {
   const data = strapi.server.listRoutes();
   const transformed = data.map(route => {
